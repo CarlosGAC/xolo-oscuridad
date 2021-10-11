@@ -23,16 +23,19 @@ public class Movement : MonoBehaviour
 
     private SpriteRenderer spriteRenderer;
 
-    public bool light;
+    public bool showLight;
     bool lightInput;
 
     public SpriteRenderer itemHolder;
+    public Item itemScript;
 
     public bool insideVendorRange;
     public VendorBehaviour whichVendor;
 
     public bool insideContainerRange;
     public ContainerBehaviour WhichContainer;
+
+    public GeneralSounds generalSounds;
 
     // Start is called before the first frame update
     void Start()
@@ -51,9 +54,9 @@ public class Movement : MonoBehaviour
 
         if(lightInput)
         {
-            light = !light;
-            transform.GetChild(1).gameObject.SetActive(!light);
-            transform.GetChild(2).gameObject.SetActive(light);
+            showLight = !showLight;
+            transform.GetChild(1).gameObject.SetActive(!showLight);
+            transform.GetChild(2).gameObject.SetActive(showLight);
         }
 
         if(horizontalInput == 1)
@@ -82,14 +85,18 @@ public class Movement : MonoBehaviour
         {
             if(insideVendorRange)
             {
-                itemHolder.sprite = whichVendor.whichItemToGive;
+                generalSounds.PlayItemGrabbed();
+                itemHolder.sprite = whichVendor.item.sprite;
+                itemScript.whichItemShouldFill = whichVendor.item.whichItemShouldFill;
             } else if(insideContainerRange)
             {
-                Debug.Log(itemHolder.sprite);
                 if(itemHolder.sprite != null)
                 {
+                    generalSounds.PlayItemDropped();
+                    WhichContainer.items[itemScript.whichItemShouldFill] = true;
                     itemHolder.sprite = null;
                     Debug.Log("Sprite deleted");
+                    WhichContainer.CheckForAllItems();
                 }
             }
         }
