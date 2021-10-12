@@ -36,14 +36,17 @@ public class Movement : MonoBehaviour
     public ContainerBehaviour WhichContainer;
 
     public GeneralSounds generalSounds;
+    private Stats playerStats;
 
-    // Start is called before the first frame update
+    public float staminaDepleteTime;
+    public float staminaRegenTime;
+
     void Start()
     {
+        playerStats = GetComponent<Stats>();
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         horizontalInput = Input.GetAxisRaw("Horizontal");
@@ -72,14 +75,27 @@ public class Movement : MonoBehaviour
 
         if(runInput)
         {
-            GetComponent<CharacterController>().Move(velocity * speed * runSpeed * Time.deltaTime);
-            //transform.Translate(velocity.normalized * speed * runSpeed * Time.deltaTime);
+            float staminaDecrease = Time.deltaTime / staminaDepleteTime;
+            Debug.Log(staminaDecrease);
+            playerStats.stamina -= staminaDecrease;
+
+            if(playerStats.stamina > 0)
+            {
+                GetComponent<CharacterController>().Move(velocity * speed * runSpeed * Time.deltaTime);
+            } else
+            {
+                GetComponent<CharacterController>().Move(velocity.normalized * speed * Time.deltaTime);
+            }
         }
         else
         {
             GetComponent<CharacterController>().Move(velocity.normalized * speed * Time.deltaTime);
-            //transform.Translate(velocity.normalized * speed * Time.deltaTime);
+            float staminaIncrease = Time.deltaTime / staminaRegenTime;
+            playerStats.stamina += staminaIncrease;
         }
+
+        playerStats.stamina = Mathf.Clamp01(playerStats.stamina);
+        playerStats.UpdateStaminaUI();
 
         if(interactInput)
         {
@@ -105,8 +121,6 @@ public class Movement : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        Debug.Log(collision.gameObject.name);
-
         if (collision.gameObject.CompareTag("Vendor"))
         {
             insideVendorRange = true;

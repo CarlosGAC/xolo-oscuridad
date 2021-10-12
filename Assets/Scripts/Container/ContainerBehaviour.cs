@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ContainerBehaviour : MonoBehaviour
 {
@@ -17,16 +18,16 @@ public class ContainerBehaviour : MonoBehaviour
     public int maxItems;
 
     public GeneralSounds generalSounds;
-    // Start is called before the first frame update
+    public GameMaster gameMaster;
+
+    public UnityEvent OnContainerCompleted;
+    public ObjectSpawner containerSpawner;
+
     void Start()
     {
         items = new bool[maxItems];
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        OnContainerCompleted.AddListener(generalSounds.PlayContainerFinished);
+        OnContainerCompleted.AddListener(gameMaster.IncreaseScore);
     }
 
     public void CheckForAllItems()
@@ -40,8 +41,17 @@ public class ContainerBehaviour : MonoBehaviour
 
         if(allItems)
         {
-            generalSounds.PlayContainerFinished();
-            Destroy(gameObject);
+            ResetItems();
+            OnContainerCompleted.Invoke();
+            containerSpawner.ChangeObjectPositionToNewSpawnPoint(gameObject);
+        }
+    }
+
+    public void ResetItems()
+    {
+        for(int i = 0; i < items.Length; i++)
+        {
+            items[i] = false;
         }
     }
 }
