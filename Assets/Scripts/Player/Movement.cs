@@ -43,11 +43,13 @@ public class Movement : MonoBehaviour
 
     public GameMaster gm;
 
+    SpriteRenderer[] renderers;
+
     void Start()
     {
         controller = GetComponent<CharacterController>();
         playerStats = GetComponent<Stats>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        renderers = GetComponentsInChildren<SpriteRenderer>();
     }
 
     void Update()
@@ -119,13 +121,17 @@ public class Movement : MonoBehaviour
 
     private void HandleMovementInput()
     {
+        Vector3 currentScale = gameObject.transform.localScale;
         if (horizontalInput == 1)
         {
-            spriteRenderer.flipX = true;
+            currentScale.x = -1;
+            gameObject.transform.localScale = currentScale;
         }
         else if (horizontalInput == -1)
         {
-            spriteRenderer.flipX = false;
+            currentScale.x = 1;
+            gameObject.transform.localScale = currentScale;
+            
         }
 
         velocity.x = horizontalInput;
