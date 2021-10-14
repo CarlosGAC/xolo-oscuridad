@@ -51,6 +51,11 @@ public class GameMaster : MonoBehaviour
         Time.timeScale = 1f;
     }
 
+    public bool IsGamePaused()
+    {
+        return paused;
+    }
+
     public void GameOver()
     {
         gameOverScreen.SetActive(true);

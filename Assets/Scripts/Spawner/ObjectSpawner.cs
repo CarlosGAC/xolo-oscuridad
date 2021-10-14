@@ -76,6 +76,15 @@ public class ObjectSpawner : MonoBehaviour
 
     private void SetVendorPositionToOccupiedSpawn(Transform vendor, Vector3 occupiedSpawnPosition)
     {
+        
+        if(vendor.name == "Player")
+        {
+            Debug.Log("Position: " + vendor.position);
+            Debug.Log("Occupied spawn: " + occupiedSpawnPosition);
+
+            vendor.position = occupiedSpawnPosition;
+            Debug.Log("NEW Position: " + vendor.position);
+        }
         vendor.position = occupiedSpawnPosition;
     }
 
