@@ -11,8 +11,6 @@ public class MonsterMovement : MonoBehaviour
     public float aggroDistance;
     public bool aggro;
 
-    private bool targetInsideAggroRange;
-
     private float timeSinceTargetEscaped;
     public float timeToResetAggro;
 
@@ -37,7 +35,6 @@ public class MonsterMovement : MonoBehaviour
         if(Vector3.Distance(target.transform.position, transform.position) < aggroDistance)
         {
             aggro = true;
-            targetInsideAggroRange = true;
             if(aggro)
             {
                 timeSinceTargetEscaped = 0;
@@ -46,7 +43,6 @@ public class MonsterMovement : MonoBehaviour
         {
             if(aggro)
             {
-                targetInsideAggroRange = false;
                 timeSinceTargetEscaped += Time.deltaTime;
             }
         }
@@ -73,6 +69,9 @@ public class MonsterMovement : MonoBehaviour
         {
             Debug.Log("I'm inside the target's collider");
             OnMonsterAttack.Invoke();
+            aggro = false;
+            timeSinceTargetEscaped = 0;
+            spawner.ChangeObjectPositionToNewSpawnPoint(gameObject);
         }
     }
 

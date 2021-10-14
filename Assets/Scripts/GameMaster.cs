@@ -24,6 +24,12 @@ public class GameMaster : MonoBehaviour
         UpdateScoreUI();
     }
 
+    public void IncreaseScore(int amount)
+    {
+        score += amount;
+        UpdateScoreUI();
+    }
+
     private void UpdateScoreUI()
     {
         scoreText.text = "Score: " + score;

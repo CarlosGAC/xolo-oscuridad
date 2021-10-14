@@ -27,7 +27,7 @@ public class ContainerBehaviour : MonoBehaviour
     {
         items = new bool[maxItems];
         OnContainerCompleted.AddListener(generalSounds.PlayContainerFinished);
-        OnContainerCompleted.AddListener(gameMaster.IncreaseScore);
+        OnContainerCompleted.AddListener(delegate { gameMaster.IncreaseScore(5); });
     }
 
     public void CheckForAllItems()

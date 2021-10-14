@@ -45,6 +45,7 @@ public class Movement : MonoBehaviour
 
     SpriteRenderer[] renderers;
 
+
     void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -94,13 +95,13 @@ public class Movement : MonoBehaviour
     private void ToggleCandle()
     {
         showCandle = !showCandle;
-        transform.GetChild(1).gameObject.SetActive(!showCandle);
-        transform.GetChild(2).gameObject.SetActive(showCandle);
+        transform.GetChild(3).gameObject.SetActive(!showCandle);
+        transform.GetChild(4).gameObject.SetActive(showCandle);
     }
 
     private void DecreaseCandleTime()
     {
-        float candleDecrease = Time.deltaTime / staminaDepleteTime;
+        float candleDecrease = Time.deltaTime / candleDepleteTime;
         playerStats.candleTime -= candleDecrease;
     }
 
@@ -180,6 +181,10 @@ public class Movement : MonoBehaviour
     }
     private void DropItemIntoContainer()
     {
+        if(!container.items[itemScript.whichItemShouldFill])
+        {
+            gm.IncreaseScore();
+        }
         generalSounds.PlayItemDropped();
         container.items[itemScript.whichItemShouldFill] = true;
         itemHolder.sprite = null;

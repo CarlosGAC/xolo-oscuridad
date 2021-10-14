@@ -534,7 +534,7 @@ GameObject:
   m_Component:
   - component: {fileID: 115337089}
   - component: {fileID: 115337090}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: XoloTopTongue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -592,8 +592,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 264744629
-  m_SortingLayer: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 7
   m_Sprite: {fileID: -1305138196418610283, guid: df72edfd8a1a97d44b90548027b3788b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1059,7 +1059,7 @@ GameObject:
   m_Component:
   - component: {fileID: 218378104}
   - component: {fileID: 218378105}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: XoloRightEar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1117,8 +1117,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 264744629
-  m_SortingLayer: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 4
   m_Sprite: {fileID: -7549796748504809736, guid: df72edfd8a1a97d44b90548027b3788b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1241,8 +1241,8 @@ MonoBehaviour:
   - {x: 0.75625, y: 1.03125, z: 0}
   - {x: -0.75625, y: 1.03125, z: 0}
   m_ShapePathHash: 0
-  m_Mesh: {fileID: 545450551}
-  m_InstanceId: 91272
+  m_Mesh: {fileID: 1268678060}
+  m_InstanceId: 19668
 --- !u!82 &226332256
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1885,7 +1885,7 @@ GameObject:
   m_Component:
   - component: {fileID: 364825408}
   - component: {fileID: 364825409}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: XoloPaw Front
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1943,8 +1943,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 264744629
-  m_SortingLayer: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 2
   m_Sprite: {fileID: -3884736645785504690, guid: df72edfd8a1a97d44b90548027b3788b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2405,7 +2405,7 @@ GameObject:
   - component: {fileID: 512654933}
   - component: {fileID: 512654932}
   - component: {fileID: 512654931}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 'Xolo '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2574,8 +2574,8 @@ MonoBehaviour:
   generalSounds: {fileID: 739634176}
   staminaDepleteTime: 5
   staminaRegenTime: 3
-  candleDepleteTime: 8
-  candleRegenTime: 4
+  candleDepleteTime: 20
+  candleRegenTime: 5
   gm: {fileID: 1080296894}
 --- !u!143 &512654934
 CharacterController:
@@ -2681,170 +2681,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   whichObjectSpawnedHere: {fileID: 0}
---- !u!43 &545450551
-Mesh:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  serializedVersion: 10
-  m_SubMeshes:
-  - serializedVersion: 2
-    firstByte: 0
-    indexCount: 42
-    topology: 0
-    baseVertex: 0
-    firstVertex: 0
-    vertexCount: 16
-    localAABB:
-      m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0.75625, y: 1.03125, z: 0}
-  m_Shapes:
-    vertices: []
-    shapes: []
-    channels: []
-    fullWeights: []
-  m_BindPose: []
-  m_BoneNameHashes: 
-  m_RootBoneNameHash: 0
-  m_BonesAABB: []
-  m_VariableBoneCountWeights:
-    m_Data: 
-  m_MeshCompression: 0
-  m_IsReadable: 1
-  m_KeepVertices: 1
-  m_KeepIndices: 1
-  m_IndexFormat: 0
-  m_IndexBuffer: 00000100020003000100000003000400010005000400030006000400050004000600070002000800000000000900030001000a00020004000b00010003000c00050007000d00040005000e00060006000f000700
-  m_VertexData:
-    serializedVersion: 3
-    m_VertexCount: 16
-    m_Channels:
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 3
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 12
-      format: 0
-      dimension: 4
-    - stream: 0
-      offset: 28
-      format: 0
-      dimension: 4
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    m_DataSize: 704
-    _typelessdata: 9a99413f0000843f00000000000080bf0000008000000080000000809a99413f0000843f9a99413f0000843f9a99413f000084bf00000000000000800000803f00000080000000809a99413f000084bf9a99413f000084bf9a99413f0000000000000000000080bf0000008000000080000000809a99413f000084bf9a99413f0000843f000000000000843f0000000000000080000080bf00000000000000809a99413f0000843f9a9941bf0000843f00000000000084bf00000000000000800000803f00000080000000809a9941bf000084bf9a99413f000084bf9a9941bf0000843f0000000000000080000080bf00000000000000809a9941bf0000843f9a9941bf0000843f9a9941bf00000000000000000000803f0000008000000080000000809a9941bf0000843f9a9941bf000084bf9a9941bf000084bf000000000000803f0000008000000080000000809a9941bf000084bf9a9941bf000084bf9a99413f0000000000000000000080bf0000008000000080000000809a99413f000084bf9a99413f0000843f9a99413f0000843f0000000000000080000080bf00000000000000809a99413f0000843f9a99413f0000843f9a99413f000084bf00000000000080bf0000008000000080000000809a99413f000084bf9a99413f000084bf00000000000084bf00000000000000800000803f00000080000000809a9941bf000084bf9a99413f000084bf000000000000843f0000000000000080000080bf00000000000000809a99413f0000843f9a9941bf0000843f9a9941bf000084bf00000000000000800000803f00000080000000809a9941bf000084bf9a9941bf000084bf9a9941bf0000843f000000000000803f0000008000000080000000809a9941bf0000843f9a9941bf0000843f9a9941bf00000000000000000000803f0000008000000080000000809a9941bf0000843f9a9941bf000084bf
-  m_CompressedMesh:
-    m_Vertices:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_UV:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Normals:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Tangents:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Weights:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_NormalSigns:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_TangentSigns:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_FloatColors:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_BoneIndices:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Triangles:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_UVInfo: 0
-  m_LocalAABB:
-    m_Center: {x: 0, y: 0, z: 0}
-    m_Extent: {x: 0.75625, y: 1.03125, z: 0}
-  m_MeshUsageFlags: 0
-  m_BakedConvexCollisionMesh: 
-  m_BakedTriangleCollisionMesh: 
-  m_MeshMetrics[0]: 1
-  m_MeshMetrics[1]: 1
-  m_MeshOptimizationFlags: 1
-  m_StreamData:
-    serializedVersion: 2
-    offset: 0
-    size: 0
-    path: 
 --- !u!4 &547681791 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 411271742563160851, guid: 6f594c8dcf53b9943beaedceb6b870bb, type: 3}
@@ -3007,7 +2843,7 @@ GameObject:
   m_Component:
   - component: {fileID: 590624611}
   - component: {fileID: 590624612}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: XoloFeather (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3065,8 +2901,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 264744629
-  m_SortingLayer: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 4
   m_Sprite: {fileID: 1092965712355122170, guid: df72edfd8a1a97d44b90548027b3788b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -3185,7 +3021,7 @@ GameObject:
   m_Component:
   - component: {fileID: 626065556}
   - component: {fileID: 626065557}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: XoloPaw
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3243,8 +3079,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 264744629
-  m_SortingLayer: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -3884736645785504690, guid: df72edfd8a1a97d44b90548027b3788b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -3414,7 +3250,7 @@ GameObject:
   m_Component:
   - component: {fileID: 717884374}
   - component: {fileID: 717884375}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: XoloHead
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3472,8 +3308,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 264744629
-  m_SortingLayer: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 5
   m_Sprite: {fileID: -1984337401066720471, guid: df72edfd8a1a97d44b90548027b3788b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -3932,7 +3768,7 @@ GameObject:
   - component: {fileID: 797343018}
   - component: {fileID: 797343020}
   - component: {fileID: 797343019}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player Item Holder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4130,7 +3966,7 @@ GameObject:
   m_Component:
   - component: {fileID: 808976043}
   - component: {fileID: 808976044}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: XoloTail_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4188,8 +4024,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 264744629
-  m_SortingLayer: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 4864190112740148288, guid: df72edfd8a1a97d44b90548027b3788b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -4482,7 +4318,7 @@ GameObject:
   m_Component:
   - component: {fileID: 889165922}
   - component: {fileID: 889165923}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: XoloTalisman
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4522,7 +4358,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4540,8 +4376,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 264744629
-  m_SortingLayer: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 6
   m_Sprite: {fileID: -1672667763915737280, guid: 7af47757a4fc44a448527f1d61cbc537, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -4709,7 +4545,7 @@ GameObject:
   m_Component:
   - component: {fileID: 905845883}
   - component: {fileID: 905845884}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: XoloBottomTongue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4767,8 +4603,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 264744629
-  m_SortingLayer: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 7
   m_Sprite: {fileID: 7237847141775539054, guid: df72edfd8a1a97d44b90548027b3788b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -4790,7 +4626,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 936629115}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Xolo Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4832,7 +4668,7 @@ GameObject:
   m_Component:
   - component: {fileID: 969189952}
   - component: {fileID: 969189953}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4890,8 +4726,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 264744629
-  m_SortingLayer: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -1951146907361809270, guid: df72edfd8a1a97d44b90548027b3788b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -5254,7 +5090,7 @@ GameObject:
   - component: {fileID: 1058022908}
   - component: {fileID: 1058022907}
   - component: {fileID: 1058022906}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -5411,7 +5247,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1071454063}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: XoloTongue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6327,7 +6163,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1172654600}
   - component: {fileID: 1172654601}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: XoloLeftEar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6385,8 +6221,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 264744629
-  m_SortingLayer: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 4
   m_Sprite: {fileID: 1211524648891180118, guid: df72edfd8a1a97d44b90548027b3788b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -6497,7 +6333,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1197944830}
   - component: {fileID: 1197944831}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: XoloHead
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6555,8 +6391,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 264744629
-  m_SortingLayer: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 5
   m_Sprite: {fileID: -226122327277478824, guid: 7af47757a4fc44a448527f1d61cbc537, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -6579,7 +6415,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1218830229}
   - component: {fileID: 1218830230}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: XoloFeather
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6637,8 +6473,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 264744629
-  m_SortingLayer: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 4
   m_Sprite: {fileID: 1092965712355122170, guid: df72edfd8a1a97d44b90548027b3788b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -6896,6 +6732,170 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   whichObjectSpawnedHere: {fileID: 0}
+--- !u!43 &1268678060
+Mesh:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  serializedVersion: 10
+  m_SubMeshes:
+  - serializedVersion: 2
+    firstByte: 0
+    indexCount: 42
+    topology: 0
+    baseVertex: 0
+    firstVertex: 0
+    vertexCount: 16
+    localAABB:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 0.75625, y: 1.03125, z: 0}
+  m_Shapes:
+    vertices: []
+    shapes: []
+    channels: []
+    fullWeights: []
+  m_BindPose: []
+  m_BoneNameHashes: 
+  m_RootBoneNameHash: 0
+  m_BonesAABB: []
+  m_VariableBoneCountWeights:
+    m_Data: 
+  m_MeshCompression: 0
+  m_IsReadable: 1
+  m_KeepVertices: 1
+  m_KeepIndices: 1
+  m_IndexFormat: 0
+  m_IndexBuffer: 00000100020003000100000003000400010005000400030006000400050004000600070002000800000000000900030001000a00020004000b00010003000c00050007000d00040005000e00060006000f000700
+  m_VertexData:
+    serializedVersion: 3
+    m_VertexCount: 16
+    m_Channels:
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 3
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 12
+      format: 0
+      dimension: 4
+    - stream: 0
+      offset: 28
+      format: 0
+      dimension: 4
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    m_DataSize: 704
+    _typelessdata: 9a99413f0000843f00000000000080bf0000008000000080000000809a99413f0000843f9a99413f0000843f9a99413f000084bf00000000000000800000803f00000080000000809a99413f000084bf9a99413f000084bf9a99413f0000000000000000000080bf0000008000000080000000809a99413f000084bf9a99413f0000843f000000000000843f0000000000000080000080bf00000000000000809a99413f0000843f9a9941bf0000843f00000000000084bf00000000000000800000803f00000080000000809a9941bf000084bf9a99413f000084bf9a9941bf0000843f0000000000000080000080bf00000000000000809a9941bf0000843f9a9941bf0000843f9a9941bf00000000000000000000803f0000008000000080000000809a9941bf0000843f9a9941bf000084bf9a9941bf000084bf000000000000803f0000008000000080000000809a9941bf000084bf9a9941bf000084bf9a99413f0000000000000000000080bf0000008000000080000000809a99413f000084bf9a99413f0000843f9a99413f0000843f0000000000000080000080bf00000000000000809a99413f0000843f9a99413f0000843f9a99413f000084bf00000000000080bf0000008000000080000000809a99413f000084bf9a99413f000084bf00000000000084bf00000000000000800000803f00000080000000809a9941bf000084bf9a99413f000084bf000000000000843f0000000000000080000080bf00000000000000809a99413f0000843f9a9941bf0000843f9a9941bf000084bf00000000000000800000803f00000080000000809a9941bf000084bf9a9941bf000084bf9a9941bf0000843f000000000000803f0000008000000080000000809a9941bf0000843f9a9941bf0000843f9a9941bf00000000000000000000803f0000008000000080000000809a9941bf0000843f9a9941bf000084bf
+  m_CompressedMesh:
+    m_Vertices:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_UV:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Normals:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Tangents:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Weights:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_NormalSigns:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_TangentSigns:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_FloatColors:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_BoneIndices:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Triangles:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_UVInfo: 0
+  m_LocalAABB:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0.75625, y: 1.03125, z: 0}
+  m_MeshUsageFlags: 0
+  m_BakedConvexCollisionMesh: 
+  m_BakedTriangleCollisionMesh: 
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
+  m_MeshOptimizationFlags: 1
+  m_StreamData:
+    serializedVersion: 2
+    offset: 0
+    size: 0
+    path: 
 --- !u!1 &1272353899
 GameObject:
   m_ObjectHideFlags: 0
@@ -7312,7 +7312,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   repeating: 0
-  secondsToPlay: 20
+  secondsToPlay: 15
   clips:
   - {fileID: 8300000, guid: 6f09fd14349c14e44b2abf9859c4df61, type: 3}
   - {fileID: 8300000, guid: af7020d718697344587066684bd038d0, type: 3}
@@ -37947,7 +37947,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1709517349}
   - component: {fileID: 1709517350}
-  m_Layer: 0
+  - component: {fileID: 1709517351}
+  m_Layer: 6
   m_Name: Light On
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37962,7 +37963,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1709517348}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 512654930}
@@ -37995,8 +37996,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensity: 0
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
-  m_PointLightInnerRadius: 0
-  m_PointLightOuterRadius: 1.92
+  m_PointLightInnerRadius: 1.5
+  m_PointLightOuterRadius: 2.19
   m_PointLightDistance: 3
   m_PointLightQuality: 1
   m_ShapeLightParametricSides: 4
@@ -38012,6 +38013,20 @@ MonoBehaviour:
   - {x: -1.5205828, y: 0.77249914, z: -0.00000017881393}
   - {x: -2.0336933, y: 0.07558775, z: -0.00000017881393}
   - {x: -1.4899492, y: -0.71322405, z: -0.00000017881393}
+--- !u!114 &1709517351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1709517348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71fa81df39b6ea140a6faa541c9ec60a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerStats: {fileID: 512654935}
+  candle: {fileID: 1709517350}
 --- !u!1 &1736036326
 GameObject:
   m_ObjectHideFlags: 0
@@ -38427,7 +38442,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1829552769}
   - component: {fileID: 1829552770}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Light Off
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38442,7 +38457,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1829552768}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.07, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 512654930}
@@ -38464,7 +38479,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.15
+  m_Intensity: 0.3
   m_LightVolumeOpacity: 0
   m_ApplyToSortingLayers: 00000000
   m_LightCookieSprite: {fileID: 0}
