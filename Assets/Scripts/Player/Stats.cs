@@ -7,13 +7,16 @@ public class Stats : MonoBehaviour
 {
     public int lives;
     public float stamina;
+    public float candleTime;
 
     public Text livesText;
     public Text staminaText;
+    public Text candleText;
 
     public UnityEvent OnPlayersDeath;
 
     public int defaultLives;
+    public GameMaster gm;
 
     private void Start()
     {
@@ -27,12 +30,17 @@ public class Stats : MonoBehaviour
         Debug.LogWarning("OnMonsterAttackHandler");
         DecreaseLives();
         UpdateLivesUI();
+        if(lives <= 0)
+        {
+            gm.GameOver();
+        }
     }
 
     private void DecreaseLives()
     {
         lives -= 1;
-        if(lives <= 0)
+        GetComponent<AudioSource>().Play();
+        if (lives <= 0)
         {
             OnPlayersDeath.Invoke();
         }
@@ -48,9 +56,15 @@ public class Stats : MonoBehaviour
         staminaText.text = "Stamina: " + (int)(stamina * 100);
     }
 
+    public void UpdateCandleUI()
+    {
+        candleText.text = "Remaining Light: " + (int)(candleTime*100);
+    }
+
     public void SetStatsToDefault()
     {
         lives = defaultLives;
         stamina = 1;
+        candleTime = 1;
     }
 }

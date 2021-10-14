@@ -2,38 +2,33 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Stats))]
+[RequireComponent(typeof(CharacterController))]
 public class Movement : MonoBehaviour
 {
-    [SerializeField]
-    float horizontalInput;
+    private float horizontalInput;
+    private float verticalInput;
+    private bool runInput;
+    private bool interactInput;
 
-    [SerializeField]
-    float verticalInput;
-
-    [SerializeField]
-    bool runInput;
-
-    [SerializeField]
-    bool interactInput;
-
-    public Vector3 velocity;
+    private Vector3 velocity;
 
     public float speed;
     public float runSpeed;
 
     private SpriteRenderer spriteRenderer;
 
-    public bool showLight;
-    bool lightInput;
+    private bool showCandle;
+    private bool candleInput;
 
     public SpriteRenderer itemHolder;
     public Item itemScript;
 
     public bool insideVendorRange;
-    public VendorBehaviour whichVendor;
+    public VendorBehaviour vendor;
 
     public bool insideContainerRange;
-    public ContainerBehaviour WhichContainer;
+    public ContainerBehaviour container;
 
     public GeneralSounds generalSounds;
     private Stats playerStats;
@@ -41,80 +36,170 @@ public class Movement : MonoBehaviour
     public float staminaDepleteTime;
     public float staminaRegenTime;
 
+    public float candleDepleteTime;
+    public float candleRegenTime;
+
+    private CharacterController controller;
+
+    public GameMaster gm;
+
     void Start()
     {
+        controller = GetComponent<CharacterController>();
         playerStats = GetComponent<Stats>();
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     void Update()
     {
+        if(!gm.IsGamePaused())
+        {
+            GetAllInputs();
+            HandleCandleInput();
+
+            float lastCandleTime = playerStats.candleTime;
+            if (showCandle && playerStats.candleTime > 0)
+            {
+                DecreaseCandleTime();
+            }
+            else
+            {
+                IncreaseCandleTime();
+            }
+            playerStats.candleTime = Mathf.Clamp01(playerStats.candleTime);
+            playerStats.UpdateCandleUI();
+
+            if (lastCandleTime > 0 && playerStats.candleTime == 0)
+            {
+                ToggleCandle();
+            }
+
+            HandleMovementInput();
+            HandleRunInput();
+            HandleInteractInput();
+        }
+
+    }
+
+    private void HandleCandleInput()
+    {
+        if (candleInput)
+        {
+            ToggleCandle();
+        }
+    }
+
+    private void ToggleCandle()
+    {
+        showCandle = !showCandle;
+        transform.GetChild(1).gameObject.SetActive(!showCandle);
+        transform.GetChild(2).gameObject.SetActive(showCandle);
+    }
+
+    private void DecreaseCandleTime()
+    {
+        float candleDecrease = Time.deltaTime / staminaDepleteTime;
+        playerStats.candleTime -= candleDecrease;
+    }
+
+    private void IncreaseCandleTime()
+    {
+        float candleIncrease = Time.deltaTime / candleRegenTime;
+        playerStats.candleTime += candleIncrease;
+    }
+
+    private void GetAllInputs()
+    {
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
         runInput = Input.GetButton("Run");
-        lightInput = Input.GetButtonDown("Jump");
+        candleInput = Input.GetButtonDown("Jump");
         interactInput = Input.GetButtonDown("Interact");
+    }
 
-        if(lightInput)
-        {
-            showLight = !showLight;
-            transform.GetChild(1).gameObject.SetActive(!showLight);
-            transform.GetChild(2).gameObject.SetActive(showLight);
-        }
-
-        if(horizontalInput == 1)
+    private void HandleMovementInput()
+    {
+        if (horizontalInput == 1)
         {
             spriteRenderer.flipX = true;
-        } else if(horizontalInput == -1)
+        }
+        else if (horizontalInput == -1)
         {
             spriteRenderer.flipX = false;
         }
 
         velocity.x = horizontalInput;
         velocity.y = verticalInput;
+    }
 
-        if(runInput)
+    private void HandleRunInput()
+    {
+
+        if (runInput && playerStats.stamina > 0)
         {
-            float staminaDecrease = Time.deltaTime / staminaDepleteTime;
-            Debug.Log(staminaDecrease);
-            playerStats.stamina -= staminaDecrease;
-
-            if(playerStats.stamina > 0)
-            {
-                GetComponent<CharacterController>().Move(velocity * speed * runSpeed * Time.deltaTime);
-            } else
-            {
-                GetComponent<CharacterController>().Move(velocity.normalized * speed * Time.deltaTime);
-            }
+            DecreaseStamina();
+            MoveCharacter(true);
         }
         else
         {
-            GetComponent<CharacterController>().Move(velocity.normalized * speed * Time.deltaTime);
-            float staminaIncrease = Time.deltaTime / staminaRegenTime;
-            playerStats.stamina += staminaIncrease;
+            IncreaseStamina();
+            MoveCharacter(false);
         }
 
         playerStats.stamina = Mathf.Clamp01(playerStats.stamina);
         playerStats.UpdateStaminaUI();
+    }
 
-        if(interactInput)
+    private void HandleInteractInput()
+    {
+
+        if (interactInput)
         {
-            if(insideVendorRange)
+            if (insideVendorRange)
             {
-                generalSounds.PlayItemGrabbed();
-                itemHolder.sprite = whichVendor.item.sprite;
-                itemScript.whichItemShouldFill = whichVendor.item.whichItemShouldFill;
-            } else if(insideContainerRange)
-            {
-                if(itemHolder.sprite != null)
-                {
-                    generalSounds.PlayItemDropped();
-                    WhichContainer.items[itemScript.whichItemShouldFill] = true;
-                    itemHolder.sprite = null;
-                    Debug.Log("Sprite deleted");
-                    WhichContainer.CheckForAllItems();
-                }
+                GrabItemFromVendor();
             }
+            else if (insideContainerRange && itemHolder.sprite != null)
+            {
+                DropItemIntoContainer();
+            }
+        }
+    }
+
+    private void GrabItemFromVendor()
+    {
+        generalSounds.PlayItemGrabbed();
+        itemHolder.sprite = vendor.item.sprite;
+        itemScript.whichItemShouldFill = vendor.item.whichItemShouldFill;
+    }
+    private void DropItemIntoContainer()
+    {
+        generalSounds.PlayItemDropped();
+        container.items[itemScript.whichItemShouldFill] = true;
+        itemHolder.sprite = null;
+        container.CheckForAllItems();
+    }
+    private void DecreaseStamina()
+    {
+        float staminaDecrease = Time.deltaTime / staminaDepleteTime;
+        playerStats.stamina -= staminaDecrease;
+    }
+
+    private void IncreaseStamina()
+    {
+        float staminaIncrease = Time.deltaTime / staminaRegenTime;
+        playerStats.stamina += staminaIncrease;
+    }
+
+    private void MoveCharacter(bool isRunning)
+    {
+        if(isRunning)
+        {
+            controller.Move(velocity.normalized * speed * runSpeed * Time.deltaTime);
+        }
+        else
+        {
+            controller.Move(velocity.normalized * speed * Time.deltaTime);
         }
     }
 
@@ -124,11 +209,11 @@ public class Movement : MonoBehaviour
         if (collision.gameObject.CompareTag("Vendor"))
         {
             insideVendorRange = true;
-            whichVendor = collision.gameObject.GetComponent<VendorBehaviour>();
+            vendor = collision.gameObject.GetComponent<VendorBehaviour>();
         }
         else if (collision.gameObject.CompareTag("Container"))
         {
-            WhichContainer = collision.gameObject.GetComponent<ContainerBehaviour>();
+            container = collision.gameObject.GetComponent<ContainerBehaviour>();
             insideContainerRange = true;
         }
     }
@@ -139,10 +224,10 @@ public class Movement : MonoBehaviour
 
         if (other.gameObject.CompareTag("Vendor"))
         {
-            whichVendor = null;
+            vendor = null;
             insideVendorRange = false;
         } else if(other.gameObject.CompareTag("Container")) {
-            WhichContainer = null;
+            container = null;
             insideContainerRange = false;
         }
     }

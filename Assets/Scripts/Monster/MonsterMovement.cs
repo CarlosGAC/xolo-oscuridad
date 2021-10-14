@@ -11,9 +11,16 @@ public class MonsterMovement : MonoBehaviour
     public float aggroDistance;
     public bool aggro;
 
+    private bool targetInsideAggroRange;
+
+    private float timeSinceTargetEscaped;
+    public float timeToResetAggro;
+
     public float defaultSpeed;
 
     public UnityEvent OnMonsterAttack;
+
+    public ObjectSpawner spawner;
 
     private void Start()
     {
@@ -30,6 +37,25 @@ public class MonsterMovement : MonoBehaviour
         if(Vector3.Distance(target.transform.position, transform.position) < aggroDistance)
         {
             aggro = true;
+            targetInsideAggroRange = true;
+            if(aggro)
+            {
+                timeSinceTargetEscaped = 0;
+            }
+        } else
+        {
+            if(aggro)
+            {
+                targetInsideAggroRange = false;
+                timeSinceTargetEscaped += Time.deltaTime;
+            }
+        }
+
+        if(timeSinceTargetEscaped >= timeToResetAggro)
+        {
+            aggro = false;
+            spawner.ChangeObjectPositionToNewSpawnPoint(gameObject);
+            timeSinceTargetEscaped = 0;
         }
 
         if (aggro && Vector3.Distance(target.transform.position, transform.position) > 0.2f)
@@ -55,6 +81,7 @@ public class MonsterMovement : MonoBehaviour
         if(other.gameObject.name == target.name)
         {
             Debug.Log("I'm leaving the target's collider");
+            
         }   
     }
 }
