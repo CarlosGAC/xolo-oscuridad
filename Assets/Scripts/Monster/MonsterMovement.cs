@@ -64,10 +64,8 @@ public class MonsterMovement : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.gameObject.name);
         if(other.gameObject.name == target.gameObject.name)
         {
-            Debug.Log("I'm inside the target's collider");
             OnMonsterAttack.Invoke();
             aggro = false;
             timeSinceTargetEscaped = 0;
@@ -79,7 +77,6 @@ public class MonsterMovement : MonoBehaviour
     {
         if(other.gameObject.name == target.name)
         {
-            Debug.Log("I'm leaving the target's collider");
             
         }   
     }

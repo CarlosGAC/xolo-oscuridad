@@ -22,6 +22,5 @@ public class CandleBehaviour : MonoBehaviour
         {
             candle.intensity = 1f;
         }
-        Debug.Log(candle.intensity);
     }
 }

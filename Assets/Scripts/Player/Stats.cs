@@ -14,22 +14,32 @@ public class Stats : MonoBehaviour
     public Text candleText;
 
     public UnityEvent OnPlayersDeath;
+    public UnityEvent OnPlayerLowLife;
 
     public int defaultLives;
     public GameMaster gm;
 
+    public VariableBasedSoundEffect whimper;
+
+    public AudioSource hurtSFX;
+    public AudioSource whimperSFX;
+
+    public CameraShake cameraShake;
+
     private void Start()
     {
+        OnPlayerLowLife.AddListener(delegate { whimper.conditionVariable = true; });
         SetStatsToDefault();
         UpdateLivesUI();
+        Debug.LogWarning(cameraShake.gameObject.name);
     }
 
 
     public void OnMonsterAttackHandler()
     {
-        Debug.LogWarning("OnMonsterAttackHandler");
         DecreaseLives();
         UpdateLivesUI();
+        cameraShake.StartShake();
         if(lives <= 0)
         {
             gm.GameOver();
@@ -39,7 +49,14 @@ public class Stats : MonoBehaviour
     private void DecreaseLives()
     {
         lives -= 1;
-        GetComponent<AudioSource>().Play();
+
+        hurtSFX.Play();
+        whimperSFX.Play();
+
+        if(lives == 1)
+        {
+            OnPlayerLowLife.Invoke();
+        }
         if (lives <= 0)
         {
             OnPlayersDeath.Invoke();
