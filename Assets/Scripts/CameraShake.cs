@@ -54,9 +54,7 @@ public class CameraShake : MonoBehaviour
     private void StopShake()
     {
         Vector3 pos = new Vector3(0, 0, -1);
-        Debug.Log(pos);
         mainCamera.transform.localPosition = pos;
-        Debug.Log("Camera Pos: " + mainCamera.transform.position);
         hold = true;
     }
 }

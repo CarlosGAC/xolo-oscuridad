@@ -9,7 +9,7 @@ public class Stats : MonoBehaviour
     public float stamina;
     public float candleTime;
 
-    public Text livesText;
+    public GameObject livesContainer;
     public Text staminaText;
     public Text candleText;
 
@@ -31,7 +31,6 @@ public class Stats : MonoBehaviour
         OnPlayerLowLife.AddListener(delegate { whimper.conditionVariable = true; });
         SetStatsToDefault();
         UpdateLivesUI();
-        Debug.LogWarning(cameraShake.gameObject.name);
     }
 
 
@@ -39,7 +38,10 @@ public class Stats : MonoBehaviour
     {
         DecreaseLives();
         UpdateLivesUI();
-        cameraShake.StartShake();
+        if(lives > 0)
+        {
+            cameraShake.StartShake();
+        }
         if(lives <= 0)
         {
             gm.GameOver();
@@ -65,7 +67,14 @@ public class Stats : MonoBehaviour
 
     public void UpdateLivesUI()
     {
-        livesText.text = "Lives: " + lives;
+        for(int i = 0; i < lives; i++)
+        {
+            livesContainer.transform.GetChild(i).gameObject.SetActive(true);
+        }
+            for (int i = lives; i < livesContainer.transform.childCount; i++)
+            {
+                livesContainer.transform.GetChild(i).gameObject.SetActive(false);
+            }
     }
 
     public void UpdateStaminaUI()

@@ -18,6 +18,8 @@ public class GameMaster : MonoBehaviour
 
     public ContainerPool containerPool;
 
+    public VariableBasedSoundEffect[] variableSFX;
+
     public void IncreaseScore()
     {
         score += 1;
@@ -41,6 +43,7 @@ public class GameMaster : MonoBehaviour
         paused = true;
 
         spawners = FindObjectsOfType<ObjectSpawner>();
+        variableSFX = FindObjectsOfType<VariableBasedSoundEffect>();
     }
 
     public void ResetGame()
@@ -51,10 +54,16 @@ public class GameMaster : MonoBehaviour
             spawner.ResetSpawnPoints();
             spawner.SpawnObjects();
         }
+
+        foreach(VariableBasedSoundEffect sfx in variableSFX)
+        {
+            sfx.conditionVariable = false;
+        }
         player.SetStatsToDefault();
         monster.SetMonsterToDefault();
         paused = false;
         Time.timeScale = 1f;
+        player.GetComponent<Stats>().UpdateLivesUI();
     }
 
     public bool IsGamePaused()
