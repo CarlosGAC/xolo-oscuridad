@@ -1,0 +1,408 @@
+fileFormatVersion: 2
+guid: 8fcb6f0c0b74f434c9b0a42b28bf5f90
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4889852644525177527
+    second: AhuizotlSprite
+  - first:
+      213: -5929995383950451912
+    second: AhuizotlHead
+  - first:
+      213: -6274852389152304124
+    second: AhuizotlTail
+  - first:
+      213: -9195093443165421838
+    second: AhuizotlRightEar
+  - first:
+      213: -6230049219165230608
+    second: AhuizotlLeft Ear
+  - first:
+      213: 815754850731480585
+    second: AhuizotlTongue
+  - first:
+      213: -4406242042179253451
+    second: AhuizotlEye
+  - first:
+      213: 2439236320814031527
+    second: AhuizotlTorso
+  - first:
+      213: -6431199705968656308
+    second: AhuizotlRightArm
+  - first:
+      213: 337275140747636629
+    second: AhuizotlLeftArm
+  - first:
+      213: -2880107007552428337
+    second: AhuizotlSpinesFront
+  - first:
+      213: -1099270417596658891
+    second: AhuizotlSpinesBack
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 1000
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: AhuizotlSprite
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 335
+        width: 1711
+        height: 1640
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ba7de8921f3cd340800000000000000
+      internalID: 4889852644525177527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AhuizotlHead
+      rect:
+        serializedVersion: 2
+        x: 2342
+        y: 1333
+        width: 739
+        height: 608
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83b5de3ed9c64bda0800000000000000
+      internalID: -5929995383950451912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AhuizotlTail
+      rect:
+        serializedVersion: 2
+        x: 3684
+        y: 1583
+        width: 1093
+        height: 357
+      alignment: 9
+      pivot: {x: 0.8374944, y: 0.6056763}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 404d0966ffe3be8a0800000000000000
+      internalID: -6274852389152304124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AhuizotlRightEar
+      rect:
+        serializedVersion: 2
+        x: 5152
+        y: 1562
+        width: 214
+        height: 407
+      alignment: 9
+      pivot: {x: 0.4034732, y: 0.13457787}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fef99b2b37746080800000000000000
+      internalID: -9195093443165421838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AhuizotlLeft Ear
+      rect:
+        serializedVersion: 2
+        x: 5386
+        y: 1528
+        width: 287
+        height: 470
+      alignment: 9
+      pivot: {x: 0.22649784, y: 0.29783002}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f9e47e4e3b6a89a0800000000000000
+      internalID: -6230049219165230608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AhuizotlTongue
+      rect:
+        serializedVersion: 2
+        x: 5676
+        y: 1770
+        width: 296
+        height: 202
+      alignment: 3
+      pivot: {x: 1, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 906d6a5f6b4225b00800000000000000
+      internalID: 815754850731480585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AhuizotlEye
+      rect:
+        serializedVersion: 2
+        x: 5835
+        y: 1507
+        width: 137
+        height: 137
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53b83893532e9d2c0800000000000000
+      internalID: -4406242042179253451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AhuizotlTorso
+      rect:
+        serializedVersion: 2
+        x: 2225
+        y: 38
+        width: 856
+        height: 1243
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a2e9599288e9d120800000000000000
+      internalID: 2439236320814031527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AhuizotlRightArm
+      rect:
+        serializedVersion: 2
+        x: 5574
+        y: 599
+        width: 419
+        height: 860
+      alignment: 9
+      pivot: {x: 0.69719684, y: 0.9131299}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c40442ef0f9cfb6a0800000000000000
+      internalID: -6431199705968656308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AhuizotlLeftArm
+      rect:
+        serializedVersion: 2
+        x: 5348
+        y: 18
+        width: 627
+        height: 554
+      alignment: 9
+      pivot: {x: 0.7767371, y: 0.7982889}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59f25db14fd3ea400800000000000000
+      internalID: 337275140747636629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AhuizotlSpinesFront
+      rect:
+        serializedVersion: 2
+        x: 4460
+        y: 4
+        width: 846
+        height: 1382
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc669b3afedc708d0800000000000000
+      internalID: -2880107007552428337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AhuizotlSpinesBack
+      rect:
+        serializedVersion: 2
+        x: 3481
+        y: 53
+        width: 888
+        height: 1365
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53b4e0f116b9eb0f0800000000000000
+      internalID: -1099270417596658891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

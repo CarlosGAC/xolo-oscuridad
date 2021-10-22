@@ -32,6 +32,13 @@ public class MonsterMovement : MonoBehaviour
 
     private void Update()
     {
+        if(target.transform.position.x > transform.position.x)
+        {
+            transform.localScale = new Vector3(-2, 2, 1);
+        } else
+        {
+            transform.localScale = new Vector3(2, 2, 1);
+        }
         if(Vector3.Distance(target.transform.position, transform.position) < aggroDistance)
         {
             aggro = true;
