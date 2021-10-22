@@ -26,6 +26,7 @@ public class Stats : MonoBehaviour
 
     public CameraShake cameraShake;
 
+    public SpriteRenderer itemSprite;
     private void Start()
     {
         OnPlayerLowLife.AddListener(delegate { whimper.conditionVariable = true; });
@@ -33,6 +34,10 @@ public class Stats : MonoBehaviour
         UpdateLivesUI();
     }
 
+    public void ClearItemSprite()
+    {
+        itemSprite.sprite = null;
+    }
 
     public void OnMonsterAttackHandler()
     {

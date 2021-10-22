@@ -10,6 +10,7 @@ public class ContainerPool : MonoBehaviour
         {
             ContainerBehaviour container = transform.GetChild(i).GetComponent<ContainerBehaviour>();
             container.ResetItems();
+            container.ResetItemContainers();
         }
     }
 }

@@ -187,6 +187,7 @@ public class Movement : MonoBehaviour
         }
         generalSounds.PlayItemDropped();
         container.items[itemScript.whichItemShouldFill] = true;
+        container.AddItemToContainer(itemScript.whichItemShouldFill);
         itemHolder.sprite = null;
         container.CheckForAllItems();
     }

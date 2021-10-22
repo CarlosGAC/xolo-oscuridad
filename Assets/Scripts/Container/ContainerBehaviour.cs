@@ -8,10 +8,10 @@ public class ContainerBehaviour : MonoBehaviour
 
     /*
      * Posiciones de los items
-     * 0: comida 
-     * 1: papel picado
-     * 2: cempasuchitl
-     * 3: mementos
+     * 0: Flores
+     * 1: Joyas
+     * 2: Papel Picado
+     * 3: Maiz
      */
 
     public bool[] items;
@@ -30,6 +30,19 @@ public class ContainerBehaviour : MonoBehaviour
         OnContainerCompleted.AddListener(delegate { gameMaster.IncreaseScore(5); });
     }
 
+    public void ResetItemContainers()
+    {
+        for(int i = 0; i < transform.childCount; i++)
+        {
+            transform.GetChild(i).gameObject.SetActive(false);
+        }
+    }
+
+    public void AddItemToContainer(int position)
+    {
+        transform.GetChild(position).gameObject.SetActive(true);
+    }
+
     public void CheckForAllItems()
     {
         bool allItems = true;
@@ -42,6 +55,7 @@ public class ContainerBehaviour : MonoBehaviour
         if(allItems)
         {
             ResetItems();
+            ResetItemContainers();
             OnContainerCompleted.Invoke();
             containerSpawner.ChangeObjectPositionToNewSpawnPoint(gameObject);
         }

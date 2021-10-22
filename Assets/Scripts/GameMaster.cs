@@ -64,6 +64,7 @@ public class GameMaster : MonoBehaviour
         paused = false;
         Time.timeScale = 1f;
         player.GetComponent<Stats>().UpdateLivesUI();
+        player.GetComponent<Stats>().ClearItemSprite();
     }
 
     public bool IsGamePaused()
