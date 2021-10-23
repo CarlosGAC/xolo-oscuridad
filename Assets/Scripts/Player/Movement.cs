@@ -116,8 +116,8 @@ public class Movement : MonoBehaviour
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
         runInput = Input.GetButton("Run");
-        candleInput = Input.GetButtonDown("Jump");
-        interactInput = Input.GetButtonDown("Interact");
+        candleInput = Input.GetButtonDown("Fire2");
+        interactInput = Input.GetButtonDown("Fire1");
     }
 
     private void HandleMovementInput()

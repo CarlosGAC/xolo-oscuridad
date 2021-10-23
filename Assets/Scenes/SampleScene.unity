@@ -264,7 +264,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Remaining Candle: 100'
+  m_Text: 'Remaining Light: 100'
 --- !u!222 &86127828
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2225,8 +2225,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 328cd57ebaf33a341a01f96bf7bb8259, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 15
-  runSpeed: 1.5
+  speed: 8
+  runSpeed: 1.65
   itemHolder: {fileID: 797343020}
   itemScript: {fileID: 797343019}
   insideVendorRange: 0
@@ -2491,6 +2491,10 @@ PrefabInstance:
     - target: {fileID: 1938693856, guid: 92aa5db7c695a824eb48068ecd186c55, type: 3}
       propertyPath: whichItemShouldFill
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1938693857, guid: 92aa5db7c695a824eb48068ecd186c55, type: 3}
+      propertyPath: secondsToPlay
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1938693859, guid: 92aa5db7c695a824eb48068ecd186c55, type: 3}
       propertyPath: item
@@ -2947,6 +2951,10 @@ PrefabInstance:
       propertyPath: sprite
       value: 
       objectReference: {fileID: -3532806851684297329, guid: 2be1ea7602c754d4b9de3d8bf7216e99, type: 3}
+    - target: {fileID: 1938693857, guid: 92aa5db7c695a824eb48068ecd186c55, type: 3}
+      propertyPath: secondsToPlay
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 1938693859, guid: 92aa5db7c695a824eb48068ecd186c55, type: 3}
       propertyPath: item
       value: 
@@ -4751,8 +4759,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 264744629
-  m_SortingLayer: 2
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -1951146907361809270, guid: df72edfd8a1a97d44b90548027b3788b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -4779,6 +4787,10 @@ PrefabInstance:
     - target: {fileID: 1938693856, guid: 92aa5db7c695a824eb48068ecd186c55, type: 3}
       propertyPath: whichItemShouldFill
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1938693857, guid: 92aa5db7c695a824eb48068ecd186c55, type: 3}
+      propertyPath: secondsToPlay
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 1938693859, guid: 92aa5db7c695a824eb48068ecd186c55, type: 3}
       propertyPath: item
@@ -5421,7 +5433,7 @@ MonoBehaviour:
   gameOverScreen: {fileID: 260825357}
   spawners: []
   player: {fileID: 512654935}
-  monster: {fileID: 226332257}
+  monster: {fileID: 1552505785}
   score: 0
   scoreText: {fileID: 1649535040}
   containerPool: {fileID: 1522407231}
@@ -37698,7 +37710,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 512654935}
-  speed: 10
+  speed: 9
   aggroDistance: 10
   aggro: 0
   timeToResetAggro: 2
@@ -37707,6 +37719,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   spawner: {fileID: 1072474002}
+  amountOfEscapes: 0
 --- !u!1 &1574947031
 GameObject:
   m_ObjectHideFlags: 0
@@ -37850,7 +37863,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1578149226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38212,7 +38225,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: PAUSA
+  m_Text: Pause
 --- !u!222 &1666747326
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -38381,7 +38394,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Comenzar
+  m_Text: Start
 --- !u!222 &1736036329
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -39572,6 +39585,10 @@ PrefabInstance:
     - target: {fileID: 1938693856, guid: 92aa5db7c695a824eb48068ecd186c55, type: 3}
       propertyPath: whichItemShouldFill
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1938693857, guid: 92aa5db7c695a824eb48068ecd186c55, type: 3}
+      propertyPath: secondsToPlay
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2357200366487635444, guid: 92aa5db7c695a824eb48068ecd186c55, type: 3}
       propertyPath: m_RootOrder

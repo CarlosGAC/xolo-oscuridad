@@ -20,9 +20,13 @@ public class MonsterMovement : MonoBehaviour
 
     public ObjectSpawner spawner;
 
+
+    public int amountOfEscapes;
+
     private void Start()
     {
         OnMonsterAttack.AddListener(target.OnMonsterAttackHandler);
+        amountOfEscapes = 0;
     }
 
     public void SetMonsterToDefault()
@@ -59,6 +63,8 @@ public class MonsterMovement : MonoBehaviour
             aggro = false;
             spawner.ChangeObjectPositionToNewSpawnPoint(gameObject);
             timeSinceTargetEscaped = 0;
+            amountOfEscapes += 1;
+            speed = speed + (amountOfEscapes * 0.1f);
         }
 
         if (aggro && Vector3.Distance(target.transform.position, transform.position) > 0.2f)
