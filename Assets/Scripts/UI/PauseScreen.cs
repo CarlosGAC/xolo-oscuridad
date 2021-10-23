@@ -10,11 +10,11 @@ public class PauseScreen : MonoBehaviour
     {
         if(pauseScreenActive)
         {
-            pauseButton.GetComponentInChildren<Text>().text = "Resumir";
+            pauseButton.GetComponentInChildren<Text>().text = ">";
         }
         else
         {
-            pauseButton.GetComponentInChildren<Text>().text = "Pausar";
+            pauseButton.GetComponentInChildren<Text>().text = "II";
         }
     }
     public void TogglePauseScreen()
