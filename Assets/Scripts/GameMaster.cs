@@ -67,6 +67,11 @@ public class GameMaster : MonoBehaviour
         player.GetComponent<Stats>().ClearItemSprite();
     }
 
+    public void QuitGame(){
+        Debug.Log("Saliendo del juego");
+        Application.Quit();
+    }
+
     public bool IsGamePaused()
     {
         return paused;

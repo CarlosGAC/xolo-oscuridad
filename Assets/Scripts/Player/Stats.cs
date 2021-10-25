@@ -89,7 +89,7 @@ public class Stats : MonoBehaviour
 
     public void UpdateCandleUI()
     {
-        candleText.text = "Remaining Light: " + (int)(candleTime*100);
+        candleText.text = "Luz restante: " + (int)(candleTime*100);
     }
 
     public void SetStatsToDefault()
