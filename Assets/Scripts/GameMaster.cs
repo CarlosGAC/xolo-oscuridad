@@ -14,6 +14,8 @@ public class GameMaster : MonoBehaviour
     private bool paused;
 
     public int score;
+
+    public Text gameOverText;
     public Text scoreText;
 
     public ContainerPool containerPool;
@@ -35,8 +37,15 @@ public class GameMaster : MonoBehaviour
     private void UpdateScoreUI()
     {
         scoreText.text = "Score: " + score;
+        gameOverText.text = "Score: " + score;
     }
-    
+
+    private void SetScore(int newScore)
+    {
+        score = newScore;
+        UpdateScoreUI();
+    }
+
     private void Start()
     {
         Time.timeScale = 0;
@@ -48,6 +57,7 @@ public class GameMaster : MonoBehaviour
 
     public void ResetGame()
     {
+        SetScore(0);
         containerPool.ResetAllObjects();
         foreach(ObjectSpawner spawner in spawners)
         {
@@ -80,6 +90,7 @@ public class GameMaster : MonoBehaviour
     public void GameOver()
     {
         gameOverScreen.SetActive(true);
+
         PauseGame();
     }
 
